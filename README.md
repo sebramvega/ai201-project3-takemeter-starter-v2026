@@ -98,43 +98,46 @@ From these discussions, I identified three candidate distinctions: technical or 
 
 **Where the posts came from:**
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+I collected 200 public comments from Hacker News using its official API. The comments came from discussions about Dropbox, Cloudflare's acquisition of Deno, Oxide Computer's Series D funding, and Typesafe AI's fundraising.
+
+**How I labelled them:**
+
+I used the three-label taxonomy defined above to categorize the comments according to their primary purpose. AI was used to suggest classifications, with the taxonomy and decision rule serving as the reference for resolving ambiguous cases. The dataset was checked for missing text, invalid labels, duplicate comments, and label distribution.
 
 **Counts per label:**
 
 | Label | Count | Share |
-|---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+|---|---:|---:|
+| `technical_explanation` | 57 | 28.5% |
+| `personal_experience` | 31 | 15.5% |
+| `unsupported_opinion` | 112 | 56.0% |
+| **Total** | **200** | **100%** |
 
 **Three hard cases**
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
+**1. Technical explanation versus unsupported opinion**
 
-**1.**
-> *The post:*
+> **The post:** A commenter explained that Linux users could combine FTP mounting with SVN or CVS to create an alternative to Dropbox.
 >
-> *Could have been:*
+> **Could have been:** `technical_explanation` or `unsupported_opinion`
 >
-> *I chose, because:*
+> **I chose:** `technical_explanation`, because the comment identifies specific technologies and explains how they could be combined to accomplish a task, even though it also criticizes Dropbox.
 
-**2.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
+**2. Personal experience versus unsupported opinion**
 
-**3.**
-> *The post:*
+> **The post:** A commenter described considering Dropbox for backing up code before questioning whether they could trust an unfamiliar developer with their files.
 >
-> *Could have been:*
+> **Could have been:** `personal_experience` or `unsupported_opinion`
 >
-> *I chose, because:*
+> **I chose:** `personal_experience`, because the comment primarily describes the author's thought process and personal reaction to the application.
+
+**3. Technical explanation versus unsupported opinion**
+
+> **The post:** A commenter suggested that Dropbox should support offline synchronization because users sometimes lack internet access.
+>
+> **Could have been:** `technical_explanation` or `unsupported_opinion`
+>
+> **I chose:** `technical_explanation`, because the recommendation is supported by a specific technical limitation of online-only file access.
 
 ---
 
