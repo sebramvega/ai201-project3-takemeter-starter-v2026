@@ -57,33 +57,35 @@ From these discussions, I identified three candidate distinctions: technical or 
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `technical_explanation`
 
-**Definition:**
+**Definition:** A comment that primarily explains a technical concept, factual detail, or how something works.
 
-**Example 1:**
->
+**Example 1:** `flohofwoe` explains that Deno includes a built-in TypeScript type checker, linter, formatter, and test runner, whereas Node relies on separate tools.
 
-**Example 2:**
->
+**Example 2:** `bayesianbot` clarifies that version 3.26.0 refers to the OpenAI Python SDK rather than the Python programming language.
 
-### `label_two`
+### `personal_experience`
 
-**Definition:**
+**Definition:** A comment that primarily recounts something the commenter personally did, witnessed, or experienced.
 
-**Example 1:**
->
+**Example 1:** `cscheid` describes leading a project built on Deno and encountering compatibility and tooling problems.
 
-**Example 2:**
->
+**Example 2:** `bkolobara` describes considering Oxide's interview process before accepting an offer from another company.
+
+### `unsupported_opinion`
+
+**Definition:** A comment that primarily expresses a judgment or assertion without providing specific supporting evidence.
+
+**Example 1:** `redox99` claims that migrating away from Deno can be completed in a single day.
+
+**Example 2:** `Oras` questions what Jev could meaningfully scale after competing implementations appeared.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `technical_explanation` and `unsupported_opinion`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+**The decision rule I used every time:** If a comment makes an assertion and provides specific, checkable supporting details, classify it as `technical_explanation`. If it makes an assertion without such details, classify it as `unsupported_opinion`. If the comment primarily recounts something the author personally experienced, classify it as `personal_experience` instead.
 
 
 
