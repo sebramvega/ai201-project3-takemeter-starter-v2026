@@ -39,8 +39,11 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+TakeMeter is a text classifier that will categorize discussion comments from Hacker News, a public online technology community. I examined comments from three discussions covering JavaScript runtimes, technology hiring practices, and AI decision models.
+
+From these discussions, I identified three candidate distinctions: technical or factual explanations, personal experiences, and unsupported opinions. These distinctions will guide the label taxonomy developed in the next milestone.
+
+
 
 
 
