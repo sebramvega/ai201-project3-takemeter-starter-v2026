@@ -51,61 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+The fine-tuned TakeMeter model achieves at least 65% overall accuracy on the held-out Hacker News test set in each of the three Unit 6 runs.
 
-
-
-**Why this target:**
-
-
+**Why this target:** TakeMeter must distinguish technical explanations, personal experiences, and unsupported opinions. These categories sometimes overlap, so 65% represents a meaningful improvement over approximately 33% accuracy from random guessing on a balanced three-label dataset while accounting for our relatively small dataset.
 
 ---
 
-## 2.
+## 2. Technical explanation F1
 
-<!-- Your criterion. -->
+The model achieves an F1 score of at least 0.60 for `technical_explanation` on the held-out test set in each of the three Unit 6 runs.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Technical explanations can overlap with unsupported opinions when commenters make technical claims without providing evidence. An F1 score of 0.60 would indicate reasonable precision and recall despite this ambiguity.
 
 ---
 
-## 3.
+## 3. Personal experience F1
 
-<!-- Your criterion. -->
+The model achieves an F1 score of at least 0.60 for `personal_experience` on the held-out test set in each of the three Unit 6 runs.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Some Hacker News comments combine firsthand experiences with broader judgments, particularly in discussions about hiring and developer tools. This target tests whether the model can recognize personal accounts without relying only on obvious first-person wording.
 
 ---
 
-## 4.
+## 4. Dataset balance
 
-<!-- Your criterion. -->
+No single label accounts for more than 60% of the completed `labels.csv` dataset.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Hacker News discussions may contain more technical explanations and opinions than personal experiences. Limiting any single category to 60% reduces the risk of training a classifier that favors the most common label while still allowing realistic differences in category frequency.
 
 ---
 
-## 5.
+## 5. Labeling consistency
 
-<!-- Your criterion. -->
+Two independent labeling passes on the same 20 Hacker News comments achieve at least 80% exact agreement, equivalent to 16 or more matching labels out of 20.
 
-
-
-**Why this target:**
+**Why this target:** Our distinction between technical explanations and unsupported opinions requires judgment about whether a comment provides checkable supporting details. Relabeling 20 comments independently will help assess whether our taxonomy produces consistent decisions rather than depending on a single interpretation.
 
 
 
