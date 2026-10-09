@@ -145,15 +145,42 @@ I used the three-label taxonomy defined above to categorize the comments accordi
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+## The Training Run
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Base model:** `distilbert-base-uncased`
+
+**Settings:**
+
+| Setting | Value |
+|---|---|
+| Hardware | CPU |
+| PyTorch version | 2.14.1+cpu |
+| Random seed | 42 |
+| Epochs | 3 |
+| Learning rate | 2e-5 |
+| Batch size | 16 |
+| Maximum sequence length | 128 tokens |
 
 **Anything I changed from the defaults, and why:**
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+I replaced the starter's example labels with my three Hacker News labels so the model could learn the categories defined in my taxonomy. I kept the remaining training settings unchanged.
+
+**Split sizes:**
+
+| Label | Train | Validation | Test |
+|---|---:|---:|---:|
+| `technical_explanation` | 40 | 9 | 8 |
+| `personal_experience` | 21 | 5 | 5 |
+| `unsupported_opinion` | 78 | 17 | 17 |
+| **Total** | **139** | **31** | **30** |
+
+The `personal_experience` label has only five examples in the test set, which may make its evaluation metrics unstable across different random seeds.
+
+**Initial training results:**
+
+The model achieved 56.7% test accuracy and a macro F1 score of 0.241. Its F1 scores were 0.000 for `technical_explanation`, 0.000 for `personal_experience`, and 0.723 for `unsupported_opinion`.
+
+These results suggest the model is favoring the most common label rather than reliably distinguishing all three categories. Further evaluation across multiple seeds is planned for Unit 6.
 
 
 
@@ -168,19 +195,23 @@ of next unit's variance. -->
      workflow and disclosing it costs you nothing. Not disclosing it is the
      problem. -->
 
+## How I Used AI
+
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- **What I asked for:** Help defining three clear labels for classifying Hacker News comments.
+- **What came back:** Suggested definitions and guidance for distinguishing technical explanations, personal experiences, and unsupported opinions.
+- **What I changed:** I finalized the definitions and added a decision rule for comments that could fit multiple categories.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- **What I asked for:** Help organizing Hacker News comments into a dataset and checking that it met the assignment requirements.
+- **What came back:** Suggested classifications and scripts for collecting, combining, and validating the comments.
+- **What I changed:** I combined the comments into one CSV, used the final taxonomy, and verified the row counts, valid labels, duplicates, and label distribution.
 
 **Pre-labelling disclosure:**
+
+AI was used to generate initial classifications for the 200 Hacker News comments. The resulting dataset was checked for structural issues and label balance, but the classifications were not independently reviewed in full.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
